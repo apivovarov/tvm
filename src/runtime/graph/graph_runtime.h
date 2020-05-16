@@ -148,6 +148,13 @@ class GraphRuntime : public ModuleNode {
    */
   int NumOutputs() const;
   /*!
+   * \brief Get the number of the index-th output.
+   * \param index The output index.
+   *
+   * \return The name of the index-th output.
+   */
+  std::string GetOutputName(int index) const;
+  /*!
    * \brief Get the names of weight inputs.
    *
    * \return The names fo the weight inputs.

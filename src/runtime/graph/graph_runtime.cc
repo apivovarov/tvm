@@ -168,6 +168,18 @@ int GraphRuntime::NumOutputs() const {
   return outputs_.size();
 }
 /*!
+ * \brief Get the number of the index-th output.
+ * \param index The output index.
+ *
+ * \return The name of the index-th output.
+ */
+std::string GraphRuntime::GetOutputName(int index) const {
+  CHECK_LT(static_cast<size_t>(index), outputs_.size())
+      << "The index of ouf of range.";
+  const uint32_t nid = outputs_[index].node_id;
+  return nodes_[nid].name;
+}
+/*!
  * \brief Return NDArray for given input index.
  * \param index The input index.
  *
